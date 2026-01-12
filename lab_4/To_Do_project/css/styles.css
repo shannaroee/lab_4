@@ -1,0 +1,294 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Фоновое изображение */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('image/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.7);
+    z-index: -1;
+}
+
+/* Контейнер */
+.container{
+    width: 40%;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    min-width: 450px;
+    min-height: 500px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Заголовок */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px 30px;
+    text-align: center;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
+}
+
+.header h1 {
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.header .subtitle {
+    font-weight: 300;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Форма добавления задачи */
+#newtask{
+    position: relative;
+    padding: 30px 20px;
+    display: flex;
+    gap: 15px;
+}
+
+#newtask input{
+    flex: 1;
+    height: 55px;
+    padding: 15px 20px;
+    color: #333;
+    font-weight: 500;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    border: 2px solid #e1e5e9;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+#newtask input:focus{
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+}
+
+#newtask button{
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#newtask button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(102, 126, 234, 0.4);
+}
+
+#newtask button:active {
+    transform: translateY(0);
+}
+
+.add-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Список задач */
+#tasks{
+    width: 100%;
+    padding: 0 20px 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.task{
+    border-radius: 12px;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    cursor: pointer;
+    background: white;
+    height: 60px;
+    margin-bottom: 15px;
+    padding: 0 20px;
+    display: flex;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #667eea;
+}
+
+.task:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.task.completed {
+    border-left-color: #4CAF50;
+    opacity: 0.7;
+}
+
+.task.completed #taskname {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task span{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    flex: 1;
+    padding-right: 10px;
+}
+
+.task button{
+    background: #ff6b6b;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.task button:hover {
+    background: #ff5252;
+    transform: scale(1.1);
+}
+
+.task button:active {
+    transform: scale(0.95);
+}
+
+.delete-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Футер */
+.footer {
+    padding: 20px;
+    border-top: 1px solid #e1e5e9;
+    background: #f8f9fa;
+    border-radius: 0 0 20px 20px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+.instructions {
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+}
+
+.instructions i {
+    margin-right: 8px;
+    color: #667eea;
+}
+
+/* Стилизация скроллбара */
+#tasks::-webkit-scrollbar {
+    width: 6px;
+}
+
+#tasks::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#tasks::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+}
+
+#tasks::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4090 100%);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        min-width: 300px;
+    }
+    
+    #newtask {
+        flex-direction: column;
+    }
+    
+    #newtask button {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .header h1 {
+        font-size: 24px;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.task {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.task.completed {
+    animation: pulse 0.3s ease;
+}

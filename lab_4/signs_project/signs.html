@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дорожные знаки</title>
+    
+    <!-- Подключение библиотек jQuery -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        
+        p {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        img {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 5px;
+            background-color: white;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        img:hover {
+            transform: scale(1.1);
+            border-color: #3498db;
+            cursor: pointer;
+        }
+        
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip .ui-tooltip {
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            z-index: 1;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-size: 14px;
+            max-width: 300px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <h1>Дорожные знаки</h1>
+    
+    <!-- Первая строка с 5 знаками -->
+    <p>
+        <img src="img/signs/sign1.png" alt="Дорожный знак 1" class="tooltip" data-hint="Знак 3.10: Движение пешеходов запрещено">
+        <img src="img/signs/sign2.png" alt="Дорожный знак 2" class="tooltip" data-hint="Знак 3.28: Стоянка запрещена">
+        <img src="img/signs/sign3.png" alt="Дорожный знак 3" class="tooltip" data-hint="Знак 3.27: Остановка запрещена">
+        <img src="img/signs/sign4.png" alt="Дорожный знак 4" class="tooltip" data-hint="Знак 3.18.1: Поворот направо запрещен">
+        <img src="img/signs/sign5.png" alt="Дорожный знак 5" class="tooltip" data-hint="Знак 3.19: Разворот запрещен">
+    </p>
+    
+    <!-- Вторая строка с 5 знаками -->
+    <p>
+        <img src="img/signs/sign6.png" alt="Дорожный знак 6" class="tooltip" data-hint="Знак 3.24: Ограничение максимальной скорости(69 км\ч)">
+        <img src="img/signs/sign7.png" alt="Дорожный знак 7" class="tooltip" data-hint="Знак 3.1: Въезд запрещен">
+        <img src="img/signs/sign8.png" alt="Дорожный знак 8" class="tooltip" data-hint="Знак 4.1.1: Движение прямо">
+        <img src="img/signs/sign9.png" alt="Дорожный знак 9" class="tooltip" data-hint="Знак 4.1.6: Двостороннее движение">
+        <img src="img/signs/sign10.png" alt="Дорожный знак 10" class="tooltip" data-hint="Знак 3.20: Обгон запрещен">
+    </p>
+    
+    <!-- Третья строка с 5 знаками -->
+    <p>
+        <img src="img/signs/sign11.png" alt="Дорожный знак 11" class="tooltip" data-hint="Знак 3.26: Подача звукого сигнала запрещена">
+        <img src="img/signs/sign12.png" alt="Дорожный знак 12" class="tooltip" data-hint="Знак 3.4: Движение грузовых автомобилей запрещено">
+        <img src="img/signs/sign13.png" alt="Дорожный знак 13" class="tooltip" data-hint="Знак 3.2: Движение запрещено (надпись NO PASE — не по ГОСТ, используется в других странах)">
+        <img src="img/signs/sign14.png" alt="Дорожный знак 14" class="tooltip" data-hint="Знак 3.24 — Ограничение максимальной скорости (60 км/ч)">
+        <img src="img/signs/sign15.png" alt="Дорожный знак 15" class="tooltip" data-hint="Знак 3.20 — Обгон запрещён">
+    </p>
+    
+    <!-- Четвертая строка с 5 знаками -->
+    <p>
+        <img src="img/signs/sign16.png" alt="Дорожный знак 16" class="tooltip" data-hint="Знак 6.4 + 8.17 — Парковка (место стоянки) для инвалидов">
+        <img src="img/signs/sign17.png" alt="Дорожный знак 17" class="tooltip" data-hint="Знак 4.3 — Круговое движение">
+        <img src="img/signs/sign18.png" alt="Дорожный знак 18" class="tooltip" data-hint="Знак 4.1.3 — Разворот разрешён">
+        <img src="img/signs/sign19.png" alt="Дорожный знак 19" class="tooltip" data-hint="Знак 7.7 — Больница">
+        <img src="img/signs/sign20.png" alt="Дорожный знак 20" class="tooltip" data-hint="Знак 6.4 — Парковка (место стоянки)">
+    </p>
+    
+    <footer>
+        <p>Наведите курсор на любой знак, чтобы увидеть его название и описание</p>
+    </footer>
+    
+    <script>
+        $(function () {
+            $(document).tooltip({
+                items: "img",
+                content: function () {
+                    var $element = $(this);
+                    if ($element.is("img")) {
+                        return $element.data('hint');
+                    }
+                },
+                position: {
+                    my: "center bottom-20",
+                    at: "center top",
+                    using: function (position, feedback) {
+                        $(this).css(position);
+                        $("<div>")
+                            .addClass("arrow")
+                            .addClass(feedback.vertical)
+                            .addClass(feedback.horizontal)
+                            .appendTo(this);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
